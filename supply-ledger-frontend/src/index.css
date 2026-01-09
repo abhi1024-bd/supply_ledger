@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent horizontal scroll */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles */
+html[data-bs-theme="dark"] {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+html[data-bs-theme="dark"] body {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+html[data-bs-theme="dark"] .card {
+  background-color: #2d3139;
+  color: #f8f9fa;
+  border-color: #495057;
+}
+
+html[data-bs-theme="dark"] .form-control,
+html[data-bs-theme="dark"] textarea,
+html[data-bs-theme="dark"] select {
+  background-color: #2d3139;
+  color: #f8f9fa;
+  border-color: #495057;
+}
+
+html[data-bs-theme="dark"] .form-control:focus,
+html[data-bs-theme="dark"] textarea:focus,
+html[data-bs-theme="dark"] select:focus {
+  background-color: #2d3139;
+  color: #f8f9fa;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+html[data-bs-theme="dark"] .btn-light {
+  background-color: #495057;
+  color: #f8f9fa;
+  border-color: #495057;
+}
+
+html[data-bs-theme="dark"] .btn-light:hover {
+  background-color: #5c636a;
+  color: #f8f9fa;
+  border-color: #5c636a;
+}
+
+html[data-bs-theme="dark"] .text-muted {
+  color: #adb5bd !important;
+}
+
+html[data-bs-theme="dark"] .bg-light {
+  background-color: #2d3139 !important;
+}
+
+html[data-bs-theme="dark"] .navbar {
+  background-color: #2d3139 !important;
+  color: #f8f9fa;
+  border-bottom: 1px solid #495057;
+}
+
+html[data-bs-theme="dark"] .alert {
+  background-color: #2d3139;
+  border-color: #495057;
+  color: #f8f9fa;
+}
+
+/* Navbar height lock */
+.navbar {
+  min-height: 72px;
+}
+
+/* Backdrop */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1040;
+}
+
+/* Side drawer */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background: #f8f9fa;
+  color: #212529;
+  z-index: 1050;
+  padding: 1.5rem;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  transition: right 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-bs-theme="dark"] .side-menu {
+  background: #2d3139;
+  color: #f8f9fa;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.side-menu.open {
+  right: 0;
+}
